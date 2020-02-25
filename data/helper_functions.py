@@ -3,6 +3,8 @@ import pandas as pd
 
 def data_target_ELHTBTU(path_to_dataset):
     '''
+    Read in all relevant predictors as a dataframe and targets as a 
+    separate series
     Parameters:
     ----------
     path_to_dataset (string):
@@ -19,9 +21,6 @@ def data_target_ELHTBTU(path_to_dataset):
     '''
 
     data = pd.read_csv(path_to_dataset)
-    data.drop(['PUBID', 'PUBCLIM', 'MFUSED', 'MFBTU', 'MFEXP', 'ELCNS', 'ELBTU', 
-        'ELEXP', 'NGCNS', 'NGBTU', 'NGEXP', 'FKCNS', 'FKBTU', 'FKEXP', 'PUBID'],
-         inplace = True, axis = 1)
 
     # Delete any predictor without data for >90% of buildings
     nan_sums = data.isna().sum()
@@ -43,28 +42,29 @@ def data_target_ELHTBTU(path_to_dataset):
             data.drop([key], inplace = True, axis = 1)
         elif key[:3] == "DHH":
             data.drop([key], inplace = True, axis = 1)
-
     
+    data.drop(['PUBID', 'PUBCLIM', 'MFUSED', 'MFBTU', 'MFEXP', 'ELCNS', 'ELBTU', 
+        'ELEXP', 'NGCNS', 'NGBTU', 'NGEXP', 'FKCNS', 'FKBTU', 'FKEXP', 'PUBID'],
+         inplace = True, axis = 1)
 
     # Separate out the target column
     data = data[data['ELHT1']==1]
 
-    # Because I am too lazy to figure out what is wrong, lets just drop the nans
+    # lets just drop the nans since they mess up XGB
     data.dropna(inplace = True)
 
     target_heating_elec = data['ELHTBTU']
     target_cooling_elec = data['ELCLBTU']
     data.drop(['ELHTBTU', 'ELCLBTU'], inplace = True, axis = 1)
 
-    #target_elec = data['ELCNS']
     data.drop(['ELHTBTU', 'ELCLBTU'], inplace = True, axis = 1)
-    #data.drop(['ELCNS'], inplace = True, axis = 1)
 
     return (data.reindex(), target_heating_elec, target_cooling_elec)
 
 
 def data_all(path_to_dataset):
     '''
+    Function to read in all relevant predictors as a dataframe
     Parameters:
     ----------
     path_to_dataset (string):
