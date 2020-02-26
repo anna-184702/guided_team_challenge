@@ -1,3 +1,7 @@
+# GTC data cleaning functions for CBECS 2012 dataset
+# Author: Anna Vaughan
+# Last updated 26/2/2020
+
 import numpy as np 
 import pandas as pd 
 
