@@ -1,0 +1,22 @@
+,buildings,heating,cooling,elec_heat,ng_heat,fo_heat,dh_heat,elec_cool,ng_cool,fo_cool,dh_cool
+All,11935,11008,10654,1882,2996,190,687,5340,59,7,40
+Vacant,381,171,127,35,44,5,11,68,0,0,0
+Office,2332,2283,2295,495,589,25,175,1197,12,0,9
+Laboratory,84,84,84,1,25,0,28,30,0,0,2
+Nonrefrigerated warehouse,1211,892,869,178,295,8,7,482,2,0,0
+Food sales,254,230,238,57,45,2,0,115,0,0,0
+Public order and safety,186,182,173,16,57,2,16,83,2,0,0
+Outpatient health care,341,334,339,62,96,5,26,178,3,1,5
+Refrigerated warehouse,41,33,35,10,5,0,1,14,0,0,0
+Religious worship,663,646,596,92,172,16,1,295,0,0,0
+Public assembly,693,662,614,91,182,13,89,320,0,0,3
+Education,1404,1382,1317,182,384,37,120,602,4,0,2
+Food service,603,575,574,122,173,4,12,315,0,0,0
+Inpatient health care,626,620,625,23,241,14,145,343,33,6,12
+Nursing,167,167,165,35,42,5,5,84,0,0,1
+Lodging,555,546,526,142,85,4,40,244,1,0,2
+Strip shopping mall,645,609,632,105,158,1,0,270,2,0,0
+Enclosed mall,80,74,79,12,14,0,2,31,0,0,2
+Retail other than mall,724,686,674,118,160,14,4,311,0,0,0
+Service,794,699,568,81,195,30,5,296,0,0,2
+Other,151,133,124,25,34,5,0,62,0,0,0
